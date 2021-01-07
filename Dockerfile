@@ -1,5 +1,4 @@
-ARG REPO=mcr.microsoft.com/dotnet/runtime-deps
-FROM $REPO:3.1-alpine3.12
+FROM alpine:3.12
 
 COPY / /
 
@@ -26,7 +25,7 @@ RUN aspnetcore_version=3.1.10 \
 # 设置默认时区
 ENV TZ=Asia/Shanghai
 
-RUN apt-get update && apt-get install -y apt-utils libgdiplus libc6-dev
+RUN apk add libgdiplus --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
 WORKDIR /app
 EXPOSE 80
