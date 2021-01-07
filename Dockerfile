@@ -13,4 +13,3 @@ RUN apt-get update && apt-get install -y apt-utils libgdiplus libc6-dev
 
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
