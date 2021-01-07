@@ -1,4 +1,5 @@
-FROM alpine:3.12
+ARG REPO=mcr.microsoft.com/dotnet/runtime-deps
+FROM $REPO:3.1-alpine3.12
 
 COPY / /
 
